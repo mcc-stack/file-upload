@@ -20,7 +20,7 @@ export default {
     { file: esm, format: 'esm', sourcemap: true }
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
-  external: [],
+  external: ['spark-md5'],
   watch: {
     include: 'src/**'
   },
