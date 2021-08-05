@@ -7,18 +7,22 @@ import json from 'rollup-plugin-json'
 
 const pkg = require('./package.json')
 
-const libraryName = 'file-upload'
+const libraryName = 'fileUpload'
+const umd = `dist/${libraryName}.umd.js`
+const es = `dist/${libraryName}.js`
+const esm = `dist/${libraryName}.esm.js`
 
 export default {
   input: `src/${libraryName}.ts`,
   output: [
-    { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true },
-    { file: pkg.module, format: 'es', sourcemap: true },
+    { file: umd, name: camelCase(libraryName), format: 'umd', sourcemap: true },
+    { file: es, format: 'es', sourcemap: true },
+    { file: esm, format: 'esm', sourcemap: true }
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external: [],
   watch: {
-    include: 'src/**',
+    include: 'src/**'
   },
   plugins: [
     // Allow json resolution
@@ -33,6 +37,6 @@ export default {
     resolve(),
 
     // Resolve source maps to the original source
-    sourceMaps(),
-  ],
+    sourceMaps()
+  ]
 }
