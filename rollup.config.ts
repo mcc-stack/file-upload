@@ -13,7 +13,7 @@ const es = `dist/${libraryName}.js`
 const esm = `dist/${libraryName}.esm.js`
 
 export default {
-  input: `src/${libraryName}.ts`,
+  input: `src/index.ts`,
   output: [
     { file: umd, name: camelCase(libraryName), format: 'umd', sourcemap: true },
     { file: es, format: 'es', sourcemap: true },

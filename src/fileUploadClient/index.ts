@@ -19,7 +19,7 @@ export interface IFileUploaderClientOptions {
 export class FileUploaderClient {
   fileUploaderClientOptions: IFileUploaderClientOptions
 
-  constructor(options: IFileUploaderClientOptions) {
+  constructor(options?: IFileUploaderClientOptions) {
     this.fileUploaderClientOptions = Object.assign(DEFAULT_OPTIONS, options)
   }
 
